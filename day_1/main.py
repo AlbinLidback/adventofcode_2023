@@ -16,21 +16,30 @@ def part1():
     sum = 0
     with open("/home/albin/Documents/adventofcode_2023/day_1/data.txt", "r") as f:
         for line in f.readlines():
+            num = []
             line = line.strip()
-            # print(line)
-            first_digit = next((char for char in line if char.isdigit()), None)
-            last_digit = next(
-                (char for char in reversed(line) if char.isdigit()), None)
-
-            # print(first_digit, last_digit)
-
-            if first_digit and last_digit:
-                sum += int(first_digit + last_digit)
+            for char in line:
+                num.append(char) if char.isdigit() else None
+            if len(num) > 0:
+                sum += int(num[0] + num[-1])
     return sum
 
 
 def part2():
-    return 0
+    sum = 0
+    with open("/home/albin/Documents/adventofcode_2023/day_1/data.txt", "r") as f:
+        for line in f.readlines():
+            num = []
+            line = line.strip()
+            for i, letter in enumerate(line):
+                for name, value in digit_words.items():
+                    if name in line[i:i+len(name)]:
+                        num.append(str(value))
+                if letter.isdigit():
+                    num.append(letter) if letter.isdigit() else None
+            if len(num) > 0:
+                sum += int(num[0] + num[-1])
+    return sum
 
 
 if __name__ == "__main__":
