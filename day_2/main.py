@@ -54,6 +54,6 @@ def part2(data):
 
 
 if __name__ == "__main__":
-    file = open("/home/albin/Documents/adventofcode_2023/day_2/data.txt", "r")
+    file = open("day_2/data.txt", "r")
     data = file.readlines()
     part2(data)

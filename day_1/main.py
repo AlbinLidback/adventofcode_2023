@@ -27,7 +27,7 @@ def part1():
 
 def part2():
     sum = 0
-    with open("/home/albin/Documents/adventofcode_2023/day_1/data.txt", "r") as f:
+    with open("day_1/data.txt", "r") as f:
         for line in f.readlines():
             num = []
             line = line.strip()
