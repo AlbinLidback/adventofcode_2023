@@ -55,6 +55,6 @@ def get_neighbors(indices):
 
 
 if __name__ == "__main__":
-    file = open("day_3/data.txt", "r")
+    file = open("day_3/data1.txt", "r")
     data = [[char for char in line.strip()] for line in file]
-    part1(data)
+    part2(data)
